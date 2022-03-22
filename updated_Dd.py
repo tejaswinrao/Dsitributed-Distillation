@@ -72,55 +72,55 @@ for i in range(10):
 
 
 
-train_filter = np.where((y_train == 0))
+# train_filter = np.where((y_train == 0))
     
-X_train0 = X_train[train_filter]
-y_train0  = y_train[train_filter]
+# X_train0 = X_train[train_filter]
+# y_train0  = y_train[train_filter]
 
-train_filter = np.where((y_train == 1))
+# train_filter = np.where((y_train == 1))
     
-X_train1 = X_train[train_filter]
-y_train1  = y_train[train_filter]
+# X_train1 = X_train[train_filter]
+# y_train1  = y_train[train_filter]
 
-train_filter = np.where((y_train == 2))
+# train_filter = np.where((y_train == 2))
     
-X_train2 = X_train[train_filter]
-y_train2  = y_train[train_filter]
+# X_train2 = X_train[train_filter]
+# y_train2  = y_train[train_filter]
 
-train_filter = np.where((y_train == 3))
+# train_filter = np.where((y_train == 3))
     
-X_train3 = X_train[train_filter]
-y_train3  = y_train[train_filter]
+# X_train3 = X_train[train_filter]
+# y_train3  = y_train[train_filter]
 
-train_filter = np.where((y_train == 4))
+# train_filter = np.where((y_train == 4))
     
-X_train4 = X_train[train_filter]
-y_train4  = y_train[train_filter]
+# X_train4 = X_train[train_filter]
+# y_train4  = y_train[train_filter]
 
-train_filter = np.where((y_train == 5))
+# train_filter = np.where((y_train == 5))
     
-X_train5 = X_train[train_filter]
-y_train5  = y_train[train_filter]
+# X_train5 = X_train[train_filter]
+# y_train5  = y_train[train_filter]
 
-train_filter = np.where((y_train == 6))
+# train_filter = np.where((y_train == 6))
     
-X_train6 = X_train[train_filter]
-y_train6  = y_train[train_filter]
+# X_train6 = X_train[train_filter]
+# y_train6  = y_train[train_filter]
 
-train_filter = np.where((y_train == 7))
+# train_filter = np.where((y_train == 7))
     
-X_train7 = X_train[train_filter]
-y_train7  = y_train[train_filter]
+# X_train7 = X_train[train_filter]
+# y_train7  = y_train[train_filter]
 
-train_filter = np.where((y_train == 8))
+# train_filter = np.where((y_train == 8))
     
-X_train8 = X_train[train_filter]
-y_train8  = y_train[train_filter]
+# X_train8 = X_train[train_filter]
+# y_train8  = y_train[train_filter]
 
-train_filter = np.where((y_train == 9))
+# train_filter = np.where((y_train == 9))
     
-X_train9 = X_train[train_filter]
-y_train9  = y_train[train_filter]
+# X_train9 = X_train[train_filter]
+# y_train9  = y_train[train_filter]
 
 
 # In[19]:
