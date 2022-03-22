@@ -2,9 +2,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 import numpy as np
-import statistics
 import matplotlib.pyplot as plt
-from sklearn.metrics import mean_squared_error
 from tensorflow.keras import activations
 from statistics import mean
 from sklearn.linear_model import SGDRegressor
@@ -29,7 +27,6 @@ X = np.concatenate([x_train, x_test])
 y = np.concatenate([y_train, y_test])
 
 
-# In[3]:
 
 
 X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=(1-TRAIN_RATIO))
@@ -46,8 +43,6 @@ X_ref = X_ref.astype("float32") / 255.0
 X_ref = np.reshape(X_ref, (-1, 28, 28, 1))
 
 
-# In[4]:
-
 
 print(len(X_train))
 print(len(X_test))
@@ -55,14 +50,11 @@ print(len(X_ref))
 print(len(y_ref))
 
 
-# In[5]:
 
 
 divide = np.array_split(X_train, 10)
 divide_label = np.array_split(y_train,10)
 
-
-# In[6]:
 
 
 for i in range(10):
@@ -123,7 +115,6 @@ for i in range(10):
 # y_train9  = y_train[train_filter]
 
 
-# In[19]:
 
 
 # Create the student
@@ -152,10 +143,6 @@ student8 = keras.models.clone_model(student)
 student9 = keras.models.clone_model(student)
 student10 = keras.models.clone_model(student)
 
-
-# ## Compile the models
-
-# In[21]:
 
 
 student1.compile(
@@ -210,14 +197,14 @@ student8.compile(
 st8 = student8.predict(X_ref)
 
 student9.compile(
-    optimizer=keras.optimizers.adam(),
+    optimizer=keras.optimizers.SGD(),
     loss=keras.losses.SparseCategoricalCrossentropy(from_logits=False),
     metrics=[keras.metrics.SparseCategoricalAccuracy()],
 )
 st9 = student9.predict(X_ref)
 
 student10.compile(
-    optimizer=keras.optimizers.adam(),
+    optimizer=keras.optimizers.SGD(),
     loss=keras.losses.SparseCategoricalCrossentropy(from_logits=False),
     metrics=[keras.metrics.SparseCategoricalAccuracy()],
 )
@@ -287,28 +274,6 @@ def train_step(x,y,student,s,X_ref):
         return s
         
         
-        ##Test on the X_test data
-        
-        # Compute predictions
-        #y_prediction = student(X, training=False)
-
-        # Calculate the loss
-        #student_loss = student_loss_fn(Y, y_prediction)
-
-        # Update the metrics.
-        #metrics.update_state(Y, y_prediction)
-
-        # Return a dict of performance
-        #results1 = {metrics.name: metrics.result()}
-        #results1.update({"student_loss": student_loss})
-        
-        #mylist = results1.items()
-        #x, y = zip(*mylist)
-        #print(y[1].numpy())
-        #return y[1].numpy()
-
-
-# In[12]:
 
 
 def test_step(X,Y,student):
@@ -333,8 +298,6 @@ def test_step(X,Y,student):
         return y[1].numpy()
         
 
-
-# In[14]:
 
 
 epoches = range(0,11)
